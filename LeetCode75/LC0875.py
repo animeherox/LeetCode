@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         minSpeed, maxSpeed = 1, int(1e9)
