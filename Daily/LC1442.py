@@ -8,9 +8,7 @@ class Solution:
             prefix[i+1] = prefix[i] ^ arr[i]
         tripletCount = 0
         for i in range(n-1):
-            for j in range(i+1, n):
-                for k in range(j, n):
-                    a, b = prefix[j] ^ prefix[i], prefix[k+1] ^ prefix[j]
-                    if a == b:
-                        tripletCount += 1
+            for k in range(i+1, n):
+                if prefix[i] == prefix[k+1]:
+                    tripletCount += k-i
         return tripletCount
